@@ -1,4 +1,5 @@
 from tkinter import *
+import tkinter.messagebox as messagebox
 
 
 class Appliacation(Frame):
@@ -8,10 +9,13 @@ class Appliacation(Frame):
         self.creatWindow()
 
     def creatWindow(self):
-        self.helloLabel = Label(self, text='hello,world!')
-        self.helloLabel.pack()
-        self.button = Button(self, text='Quit', COMMAND=self.creatWindow())
+        self.nameInput = Entry(self)
+        self.nameInput.pack()
+        self.button = Button(self, text='Hello', command=self.hello)
         self.button.pack()
+    def hello(self):
+        name = self.nameInput.get() or 'world'
+        messagebox.showinfo('Message', 'hello,{}'.format(name))
 
 
 app = Appliacation()
