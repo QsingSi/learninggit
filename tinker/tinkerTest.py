@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter.messagebox as messagebox
 import socket
+import logging
 
 
 class Appliacation(Frame):
