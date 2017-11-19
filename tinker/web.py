@@ -1,11 +1,12 @@
 import webbrowser
-import tkinter
+import tkinter as tk
 import os
+import sys
 from tkinter import *
 import tkinter.messagebox as messagebox
 '''
 下一步计划,强制关机,以及完善messagebox确定键的操作
-了解python程序如何打包成exe程序
+了解python程序如何打包成exe程序  --- 已完成
 '''
 
 
@@ -34,9 +35,12 @@ class MyWight(Frame):
         ##url = self.url.get() or 'http://www.baidu.com'
         info = self.url.get()
         if info != '爸爸':
-            self.shutdown()
+            self.shutdown
         else:
-            messagebox.showinfo('好孩子!!!', '你是我的好孩子啊!!!')
+            if messagebox.askyesno('好孩子!!!', '我是你的好爸爸吗???'):
+                sys.exit()
+            else:
+                self.shutdown
         '''
         if self.url.get():
             url = 'http://www.' + url
@@ -50,4 +54,7 @@ class MyWight(Frame):
 mw = MyWight()
 mw.master.title('搞你')
 mw.master.geometry('300x100')
+mw.master.resizable(False, False)
+mw.master.protocol('WM_DELETE_WINDOW', func=mw.shutdown)
+mw.master.wm_attributes('-topmost', 1)
 mw.mainloop()
