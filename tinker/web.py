@@ -5,7 +5,7 @@ import sys
 from tkinter import *
 import tkinter.messagebox as messagebox
 '''
-下一步计划,强制关机,以及完善messagebox确定键的操作
+下一步计划,强制关机,以及完善messagebox确定键的操作  ---已完成
 了解python程序如何打包成exe程序  --- 已完成
 '''
 
