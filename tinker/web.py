@@ -33,7 +33,7 @@ class MyWight(Frame):
     def openWeb(self, event):
         # webbrower.open('http://www.baidu.com', new=1)
         ##url = self.url.get() or 'http://www.baidu.com'
-        info = self.url.get()
+        info = self.url.get().strip()
         if info != '爸爸':
             self.shutdown
         else:
